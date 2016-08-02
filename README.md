@@ -56,3 +56,51 @@ var styles=StyleSheet.creat({  //创建css样式组件 主要是采用flex的布
 	}
 })
 ```
+# 一 个简单的页面跳转  
+```js
+
+import React, { Component } from 'react';//导入react的组建
+import {//需要的组建导入
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Navigator,
+  TouchableHighlight
+} from 'react-native';
+
+import NextTowPage from './NextTowPage' //导入需要跳转的页面
+import test from './test'
+
+
+export default class NextPage extends Component { //申明关系
+  constructor(props) {
+    super(props)
+
+  }
+
+  render(){
+    const {navigator} = this.props;
+    return(
+      <View style={{padding:50,borderWidth:1,}}>
+        <TouchableHighlight
+          onPress={()=>{
+            navigator.push({ title: 'Awesome Scene', index: 0 ,component:NextTowPage})//注意
+          }}>
+          <Text style={{fontSize:50,}}>sdds</Text>
+
+
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={()=>{
+            navigator.push({ title: 'Awesome Scene', index: 0 ,component:test})
+          }}>
+          <Text style={{fontSize:20,}}>sdds</Text>
+
+
+        </TouchableHighlight>
+      </View>
+    )
+  }
+}
+  ```
