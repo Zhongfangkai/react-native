@@ -104,3 +104,16 @@ export default class NextPage extends Component { //申明关系
   }
 }
   ```
+#一个简单的组件  
+```js
+1.创建组件
+class xxx extends Component{
+render(){
+	return(
+	//具体组件内容 属性{this.props.xxx}
+	)
+}
+}
+2.使用组件  
+<xxx title="aaa"/> //添加相应的属性
+```
