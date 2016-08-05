@@ -125,3 +125,10 @@ render(){
   //隐藏滚动条
  showsHorizontalScrollIndicator={false}
 ```
+#布局相关  
+```js 
+    <View style={{flex:1,}}> //首先定义整个的页面是弹性盒子模型
+     <Mind/>
+     <View style={{position:'absolute',left:20,bottom:0}}><Text>sddcdsfdsfsds</Text></View> //  这样就可以让子元素（项目使用基本的布局方式）
+    </View>
+```
