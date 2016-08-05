@@ -118,3 +118,10 @@ render(){
 2.使用组件  
 <xxx title="aaa"/> //添加相应的属性
 ```
+#关于scrollView的滚动相关  
+```js 
+ //水平滚动 默认是向下的
+ horizontal = {true}
+  //隐藏滚动条
+ showsHorizontalScrollIndicator={false}
+```
