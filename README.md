@@ -133,3 +133,117 @@ render(){
      <View style={{position:'absolute',left:20,bottom:0}}><Text>sddcdsfdsfsds</Text></View> //  这样就可以让子元素（项目使用基本的布局方式）
     </View>
 ```
+#当前页面显示默认组件  
+```js 
+import React,{Component} from 'react';
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Navigator
+} from 'react-native';
+import order from './order';
+import mdetails from './mdetails';
+import BlankView from '../common/BlankView';
+
+{/*h会议详情的组件*/}
+class Mind extends Component{
+  render(){
+    return(
+            <ScrollView style={{backgroundColor:'#fff',marginTop:60}}>
+              <Image source={require('../img/tpm/x0001.png')}/>
+              <Text style={styles.tone}>{this.props.con}</Text>
+              <View style={styles.ttwo}><Image source={require('../img/loc.png')}/>
+               <Text>{this.props.location}</Text>
+              </View>
+              <View style={{paddingHorizontal:10,paddingVertical:10,flex:1,flexDirection:'row'}}>
+                <View><Text>人数: <Text style={styles.color}>{this.props.people}</Text></Text></View>
+                <View style={{marginLeft:10}}><Text>面积: <Text style={styles.color}>{this.props.area}</Text></Text></View>
+              </View>
+              <View style={{height:15,backgroundColor:'#eee'}}></View>
+              {/*会议室详情*/}
+              <View style={styles.del}>
+                <View style={{paddingVertical:10,borderStyle:'solid',borderBottomWidth:1,borderColor:'#eeeeee'}}><Text >开放时间  周一至周五 9:00-18:00</Text></View>
+                <View style={{paddingVertical:10,borderStyle:'solid',borderBottomWidth:1,borderColor:'#eeeeee'}}><Text>提供发票  是</Text></View>
+                <View style={{paddingVertical:10,borderStyle:'solid',borderBottomWidth:1,borderColor:'#eeeeee'}}><Text>设施    WIFI 会议桌 白板 茶水 投影仪</Text></View>
+                <View style={{paddingVertical:10}}><Text>退订政策  在订单使用时间提前1小时退订，可获全额退款</Text></View>
+              </View>
+           </ScrollView>
+            )
+  }
+}
+export default class MeetingIndexView extends Component {
+  constructor(props) {
+    super(props);
+}
+  render(){
+    const {navigator} = this.props;
+    return(
+      <View style={styles.container}>
+      <Mind con="适合中型董事会议、谈判事项、重要客户业务洽谈、视频会议。"people="15" money="500" location="上海市黄浦区中山东二路8号6层" area="120㎡"/>
+      {/*按钮下一步*/}
+      <TouchableOpacity onPress={()=>{
+            navigator.push({
+              title:"会议预定",
+              component:order
+            })
+          }}>
+          <View style={styles.button}><Text style={{color:'#fff',fontSize:18}}>下一步</Text></View>
+        </TouchableOpacity>
+      </View>
+    )
+  }
+}
+
+
+var styles = StyleSheet.create({
+  container:{
+    backgroundColor:"#f7f7f7",
+    flex:1
+  },
+  tcon:{
+    backgroundColor:'#3883FF',
+    paddingVertical:10,
+    flex:1,flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+   },
+  tone:{
+    fontSize:14,
+    paddingVertical:15,
+    paddingHorizontal:10,
+    backgroundColor:'#fff',
+   },
+  ttwo:{
+    flex:1,
+    flexDirection:'row',
+    borderTopWidth:1,
+    borderBottomWidth:1,
+    borderBottomColor:'#eeeeee',
+    borderTopColor:'#eeeeee',
+    borderStyle:'solid',
+    marginLeft:10,
+    marginRight:10,
+    paddingVertical:10
+  },
+  color:{
+    color:'#3883FF',
+  },
+  del:{
+    paddingVertical:10,
+    paddingHorizontal:10,
+  },
+  button:{
+    height:60,
+    backgroundColor:'#3883FF',
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    marginTop:28
+   }
+})
+
+```
