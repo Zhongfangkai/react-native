@@ -1,5 +1,6 @@
 # react-native
 react-native的基本使用
+我的博客笔记地址：http://www.cnblogs.com/allenxieyusheng/
 MAC for ios 
 #基础配置  
 1.Homebrew ：类似于app store的软件商店   brew  -v 查看版本  
