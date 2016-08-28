@@ -14,9 +14,9 @@ class demo2 extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <Text>周杰伦{Dime.get('window').width}</Text>
-        <Text>周杰伦{Dime.get('window').height}</Text>
-        <Text>周杰伦{Dime.get('window').scale}</Text>
+        <Text>周杰伦{Dime.get('window').width}</Text>  宽的
+        <Text>周杰伦{Dime.get('window').height}</Text> 高
+        <Text>周杰伦{Dime.get('window').scale}</Text>  缩放大小
       </View>
     )
   }
