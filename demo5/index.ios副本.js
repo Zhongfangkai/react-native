@@ -49,10 +49,11 @@ class demo2 extends Component{
       // 取出单一个组件的数据
       var dlist=share.data[i];
       zone.push(
-        <View>
+        <View key={i}> //给每个View添加标示
           <Text>{share.data[i].title}</Text>   //将想要的组件Push到zone数组中，
         </View>
       )
+      return zone //返回数组（返回组件）
     }
   }
 }
