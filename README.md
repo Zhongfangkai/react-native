@@ -65,10 +65,51 @@ name:propType.String.isrequird,
 ### 3:navigator（路由栈）
 ### 4:state（组件状态）
 ### 5:fetch（网络请求）
+在RN重中常用的请求就是用fetch来获取的，类似于web端的Ajax，在项目的
+开发中，一般我们用get请求和post请求来获取数据，
+1.仅仅的单纯请求get  
+```js
+fetch('https://facebook.github.io/react-native/movies.json')
+.then((response) => response.json())
+.then((responseJson) => {
+susseed()//执行请求成功
+})
+.catch((error) => {
+fail()
+console.error(error);//请求错误
+});
+```
+2:post请求，这里分为两种格式，一种是基本传递，另外一种的是在请求头后加参数
+```js
+fetch('https://mywebsite.com/endpoint/', {
+method: 'POST',
+headers: {
+'Accept': 'application/json',
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+firstParam: 'yourValue',
+secondParam: 'yourOtherValue',
+})
+})
+......
+```
+另一种：
+```js
+fetch('https://mywebsite.com/endpoint/', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/x-www-form-urlencoded',
+},
+body: 'key1=value1&key2=value2'
+})
+...
+这里面：请求头是：url+"?"+"key1"=value1"&key2"=value2
+```
 
-
-
-#  一 个简单的页面跳转  
+###### 注释：网络请求天然是一种异步操作，异步的意思是你应该趁这个时间去做点别的事情，比如显示loading，类似的还有异步存储
+###### Tips：JSON.stringify(Obj)  JSON.parse(JSON)
+###  一 个简单的页面跳转  
 ```js
 
 import React, { Component } from 'react';//导入react的组建
