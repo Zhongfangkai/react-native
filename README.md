@@ -173,3 +173,8 @@ showsHorizontalScrollIndicator={false}
 </View>
 ```
 
+
+##参考文档：
+1. 常用组件搜索：  
+2. 基本样式. [native-base](http://nativebase.io/docs/v0.4.6/components)
+
