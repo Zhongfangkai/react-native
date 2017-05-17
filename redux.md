@@ -183,4 +183,4 @@ const abc = state => ({
 export default connect(abc)(Home);
 
  ```
-
+## 具体项目 ，请查看test项目文件！
